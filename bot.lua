@@ -55,8 +55,8 @@ local commands = { -- Our list of commands
 
 
 client:on("ready", function()
-	client:getChannel(mainchannel):send("***{!} TESTBOT {!}***")
-	print("***TESTBOT***")
+	client:getChannel(mainchannel):send("***{!} TESTBOT ACTIVATED {!}***")
+	print("***TESTBOT ACTIVATED***")
 end)
 
 
