@@ -57,7 +57,7 @@ local commands = { -- Our list of commands
 
 		file = io.open("index.html", "w")
 		io.output(file)
-		io.write(" -- End of the Edd.txt file --")
+		io.write(" -- End of the index.html file --")
 		io.close(file)
 
 		file = io.open("index.html", "r")
