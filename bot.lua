@@ -8,7 +8,7 @@ local admins = {"256908461718110210", "286243344697524224", "291675966088937473"
 local owner = "256908461718110210"
 local activated = true
 
-file = io.open("index.html", "r")
+file = io.open("index.html", "a")
 -- sets the default output file as test.lua
 io.output(file)
 -- appends a word test to the last line of the file
