@@ -1,1 +1,4 @@
-<?php header('Location: index.html'); ?>
+<?php 
+  print("I am learning PHP");
+  //header('Location: index.html');
+?>
