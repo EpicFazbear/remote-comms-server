@@ -1,1 +1,10 @@
-test
+-- this will be where chat logs will be logged i guess
+
+-- Todo: Make some commands that will control lots of the stuff
+- Set the refresh rate
+- Stop for X seconds
+- Whitelist/blacklist certain users from using the bot
+- Enable/disable the webhook
+
+- Also, add it so that the bot doesn't count webhooks
+- Also consider if multiple people speak in the same timeframe
