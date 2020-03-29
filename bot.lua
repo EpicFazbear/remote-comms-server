@@ -8,22 +8,6 @@ local admins = {"256908461718110210", "286243344697524224", "291675966088937473"
 local owner = "256908461718110210"
 local activated = true
 
-file = io.open("index.html", "w")
--- sets the default output file as test.lua
-io.output(file)
--- appends a word test to the last line of the file
-io.write("-- End of the index.html file")
--- closes the open file
-io.close(file)
-
-file = io.open("index.html", "r")
--- sets the default input file as test.lua
-io.input(file)
--- prints the first line of the file
-print(io.read())
--- closes the open file
-io.close(file)
-
 
 local commands = { -- Our list of commands
 	{Name = "help", Run = function(message)
@@ -58,6 +42,24 @@ local commands = { -- Our list of commands
 			activated = false
 			message:reply("`Successfully disabled the two-way transmission.`")
 		end
+	end};
+
+	{Name = "append", Run = function(message)
+		file = io.open("log.txt", "a")
+		-- sets the default output file as test.lua
+		io.output(file)
+		-- appends a word test to the last line of the file
+		io.write(" -- End of the log.txt file")
+		-- closes the open file
+		io.close(file)
+
+		file = io.open("log.txt", "r")
+		-- sets the default input file as test.lua
+		io.input(file)
+		-- prints the first line of the file
+		print(io.read())
+		-- closes the open file
+		io.close(file)
 	end};
 }
 
