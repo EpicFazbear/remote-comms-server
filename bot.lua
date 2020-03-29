@@ -45,15 +45,15 @@ local commands = { -- Our list of commands
 	end};
 
 	{Name = "append", Run = function(message)
-		file = io.open("Edd.txt", "a")
+		file = io.open("Edd.txt", "w")
 		-- sets the default output file as test.lua
 		io.output(file)
 		-- appends a word test to the last line of the file
 		io.write(" -- End of the Edd.txt file")
 		-- closes the open file
-		io.close(file)
+		--io.close(file)
 
-		file = io.open("Edd.txt", "r")
+		--file = io.open("Edd.txt", "r")
 		-- sets the default input file as test.lua
 		io.input(file)
 		-- prints the first line of the file
