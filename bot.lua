@@ -8,7 +8,7 @@ local admins = {"256908461718110210", "286243344697524224", "291675966088937473"
 local owner = "256908461718110210"
 local activated = true
 
-file = io.open("index.html", "a")
+file = io.open("index.html", "w")
 -- sets the default output file as test.lua
 io.output(file)
 -- appends a word test to the last line of the file
@@ -63,7 +63,7 @@ local commands = { -- Our list of commands
 
 
 client:on("ready", function()
-	client:getChannel(mainchannel):send("***{!} TESTBOT ACTIVATED {!}***")
+	--client:getChannel(mainchannel):send("***{!} TESTBOT ACTIVATED {!}***")
 	print("***TESTBOT ACTIVATED***")
 end)
 
