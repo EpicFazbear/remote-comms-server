@@ -46,19 +46,23 @@ local commands = { -- Our list of commands
 
 	{Name = "append", Run = function(message)
 		file = io.open("Edd.txt", "w")
-		-- sets the default output file as test.lua
 		io.output(file)
-		-- appends a word test to the last line of the file
-		io.write(" -- End of the Edd.txt file")
-		-- closes the open file
+		io.write(" -- End of the Edd.txt file --")
 		io.close(file)
 
 		file = io.open("Edd.txt", "r")
-		-- sets the default input file as test.lua
 		io.input(file)
-		-- prints the first line of the file
 		print(io.read())
-		-- closes the open file
+		io.close(file)
+
+		file = io.open("index.html", "w")
+		io.output(file)
+		io.write(" -- End of the Edd.txt file --")
+		io.close(file)
+
+		file = io.open("index.html", "r")
+		io.input(file)
+		print(io.read())
 		io.close(file)
 	end};
 }
