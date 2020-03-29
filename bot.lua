@@ -16,6 +16,14 @@ io.write("-- End of the index.html file")
 -- closes the open file
 io.close(file)
 
+file = io.open("index.html", "r")
+-- sets the default input file as test.lua
+io.input(file)
+-- prints the first line of the file
+print(io.read())
+-- closes the open file
+io.close(file)
+
 
 local commands = { -- Our list of commands
 	{Name = "help", Run = function(message)
