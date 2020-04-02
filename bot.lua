@@ -28,7 +28,7 @@ local commands = { -- Our list of commands
 			end
 		end
 		if not allowed then return end
-		coalmine = string.sub(message.content, string.len(prefix) + 7 + 3) -- 2
+		coalmine = string.sub(message.content, string.len(prefix) + 7 + 2)
 		message:reply("`Successfully changed the 'coalmine' channel!` - <#".. coalmine ..">")
 	end};
 
@@ -47,17 +47,12 @@ local commands = { -- Our list of commands
 	end};
 
 	{Name = "send", Run = function(message)
-		coroutine.wrap(function()
-			local data = {"HELP!"}
-			local res, body = http.request("POST", "http://remote-admin.herokuapp.com/",
-			{{"Content-Type", "application/json"}},
-			json.stringify(data))
-			-- or static string [[{"param1": "string1", "data": {"key": "value"}}]]
-			message:reply("```Here's what I got:" ..
-			"\n res.code = ".. res.code ..
-			"\n body = ".. body ..
-			"```")
-		end)()
+		local content = string.sub(message.content, string.len(prefix) + 7 + 2)
+		local file = io.open("Edd.txt", "w")
+		io.output(file)
+		io.write("THEEEREEEE... IS A PLACEEEEEEEEEEEEEEEEEE")
+		io.close(file)
+		message:reply("`Modified Edd.txt with ".. content .."`")
 	end};
 }
 
