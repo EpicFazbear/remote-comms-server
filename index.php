@@ -1,7 +1,7 @@
 <?php
   $data = $_POST;
-  echo($data);
-  $myfile = fopen("Edd.txt", "a");
-  fwrite($myfile, "\n". $data);
+  echo(count($data));
+  $myfile = fopen("Edd.txt", "w");
+  fwrite($myfile, $data);
   fclose($myfile);
 ?>
