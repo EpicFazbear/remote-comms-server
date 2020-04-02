@@ -1,4 +1,5 @@
 -- this will be where chat logs will be logged i guess
+- Reference: https://www.afterhoursprogramming.com/tutorial/php/post-and-get/
 
 -- Todo: Make some commands that will control lots of the stuff
 - Set the refresh rate
