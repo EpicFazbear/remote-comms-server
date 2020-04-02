@@ -1,9 +1,7 @@
 <?php
-  $data = $_POST['text'];
+  $data = $_POST;
+  echo($data)
   $myfile = fopen("Edd.txt", "a");
   fwrite($myfile, "\n". $data);
   fclose($myfile);
-  $myfile2 = fopen("Edd.txt", "r");
-  echo fread($myfile2, filesize("Edd.txt"));
-  fclose($myfile2);
 ?>
