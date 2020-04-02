@@ -1,5 +1,5 @@
 <?php
-  $data = $_POST['text'];
+  $data = $_POST['text'] or "INVALID REQUEST >:(";
   $myfile = fopen("Edd.txt", "a");
   fwrite($myfile, "\n". $data);
   fclose($myfile);
