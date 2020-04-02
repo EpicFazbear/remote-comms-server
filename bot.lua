@@ -48,7 +48,7 @@ local commands = { -- Our list of commands
 
 	{Name = "send", Run = function(message)
 		coroutine.wrap(function()
-		    local data = {text = "AAAAAAAAAAAAAAAAAAAAAAAAA"}
+		    local data = {text = "AAAAAAAAAAAAAAAAAAAAAAAAA", data = {text = "NOPEOPE"}}
 		    local res, body = http.request("POST", "http://remote-admin.herokuapp.com/",
 		      {{"Content-Type", "application/json"}},
 		      json.stringify(data))
