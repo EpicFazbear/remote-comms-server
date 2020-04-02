@@ -1,10 +1,8 @@
 <?php
-  $myfile = fopen("Edd.txt", "a");
-  fwrite($myfile, "\nHello! Hello! Hello! Hello! How Low?");
-  fclose($myfile);
-  $myfile2 = fopen("Edd.txt", "r");
-  echo fread($myfile2, filesize("Edd.txt"));
-  fclose($myfile2);
-  //echo("I am learning PHP");
-  //header("Location: index.html");
+    echo "Hello, ".$_POST['userFirstName']." ". $_POST['userLastName'];
 ?>
+<form action="php-forms.php" method="post">
+    Last Name: <input name="userLastName" type="text" />
+    First Name: <input name="userFirstName" type="text" />
+    <input name="submit" type="submit" value="Submit"/>
+</form>
