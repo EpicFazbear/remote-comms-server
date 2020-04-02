@@ -45,7 +45,7 @@ local commands = { -- Our list of commands
 	end};
 
 	{Name = "send", Run = function(message)
-		local content = string.sub(message.content, string.len(prefix) + 7 + 2)
+		local content = string.sub(message.content, string.len(prefix) + 4 + 2)
 		local file = io.open("Edd.txt", "w")
 		io.output(file)
 		io.write("THEEEREEEE... IS A PLACEEEEEEEEEEEEEEEEEE")
