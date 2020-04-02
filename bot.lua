@@ -48,13 +48,15 @@ local commands = { -- Our list of commands
 
 	{Name = "send", Run = function(message)
 		coroutine.wrap(function()
-		    local data = {userFirstName = "Gaben", userLastName = "Newell"}
-		    local res, body = http.request("POST", "http://remote-admin.herokuapp.com/php-forms.php",
-		      {{"Content-Type", "application/json"}},
-		      json.stringify(data))
-		      -- or static string [[{"param1": "string1", "data": {"key": "value"}}]]
-		    print(res.code)
-		    print(body)
+			local data = {userFirstName = "Gaben", userLastName = "Newell"}
+			local res, body = http.request("POST", "http://remote-admin.herokuapp.com/php-forms.php",
+			{{"Content-Type", "application/json"}},
+			json.stringify(data))
+			-- or static string [[{"param1": "string1", "data": {"key": "value"}}]]
+			message:reply("```Here's what I got:" ..
+			"\n res.code = ".. res.code ..
+			"\n body = ".. body ..
+			"```")
 		end)()
 	end};
 }
