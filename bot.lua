@@ -1,8 +1,6 @@
 -- https://discordapp.com/oauth2/authorize?client_id=472921438769381397&permissions=68671553&scope=bot
 
 local discordia = require("discordia")
-local http = require("coro-http")
-local json = require("json")
 local client = discordia.Client()
 local prefix = ";" -- "/"
 local mainchannel = "693204333793116270"
