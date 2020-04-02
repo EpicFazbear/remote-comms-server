@@ -1,6 +1,8 @@
 -- https://discordapp.com/oauth2/authorize?client_id=472921438769381397&permissions=68671553&scope=bot
 
-local discordia = require("discordia")
+local discordia = require("discordia")'
+local http = require("coro-http")
+local json = require("json")
 local client = discordia.Client()
 local prefix = ";" -- "/"
 local mainchannel = "693204333793116270"
@@ -44,26 +46,16 @@ local commands = { -- Our list of commands
 		end
 	end};
 
-	{Name = "append", Run = function(message)
-		file = io.open("Edd.txt", "a")
-		io.output(file)
-		io.write("\nWhen the lights are out, it's less dangerous!")
-		file:close()
-
-		file = io.open("Edd.txt", "r")
-		io.input(file)
-		print(io.read())
-		file:close()
-
-		file = io.open("index.html", "a")
-		io.output(file)
-		io.write("\n-- End of the index.html file --")
-		file:close()
-
-		file = io.open("index.html", "r")
-		io.input(file)
-		print(io.read())
-		file:close()
+	{Name = "send", Run = function(message)
+		coroutine.wrap(function()
+		    local data = {text = "AAAAAAAAAAAAAAAAAAAAAAAAA"}
+		    local res, body = http.request("POST", "http://remote-admin.herokuapp.com/",
+		      {{"Content-Type", "application/json"}},
+		      json.stringify(data))
+		      -- or static string [[{"param1": "string1", "data": {"key": "value"}}]]
+		    print(res.code)
+		    print(body)
+		end)()
 	end};
 }
 
