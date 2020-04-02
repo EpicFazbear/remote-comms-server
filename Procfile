@@ -1,1 +1,1 @@
-web: luvit bot.lua
+chuck testa: luvit bot.lua
