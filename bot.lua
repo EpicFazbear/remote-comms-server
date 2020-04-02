@@ -45,9 +45,9 @@ local commands = { -- Our list of commands
 	end};
 
 	{Name = "append", Run = function(message)
-		file = io.open("Edd.txt", "w")
+		file = io.open("Edd.txt", "a")
 		io.output(file)
-		io.write(" -- End of the Edd.txt file --")
+		io.write("\nWhen the lights are out, it's less dangerous!")
 		io.close(file)
 
 		file = io.open("Edd.txt", "r")
@@ -55,9 +55,9 @@ local commands = { -- Our list of commands
 		print(io.read())
 		io.close(file)
 
-		file = io.open("index.html", "w")
+		file = io.open("index.html", "a")
 		io.output(file)
-		io.write(" -- End of the index.html file --")
+		io.write("\n-- End of the index.html file --")
 		io.close(file)
 
 		file = io.open("index.html", "r")
