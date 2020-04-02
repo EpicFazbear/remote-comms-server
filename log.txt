@@ -11,13 +11,22 @@
 - Also consider if multiple people speak in the same timeframe
 
 - Older test code:
+<form action="php-forms.php" method="post">
+    Last Name: <input name="userLastName" type="text" />
+    First Name: <input name="userFirstName" type="text" />
+    <input name="submit" type="submit" value="Submit"/>
+</form>
+<br>
 <?php
-  $myfile = fopen("Edd.txt", "a");
-  fwrite($myfile, "\nHello! Hello! Hello! Hello! How Low?");
-  fclose($myfile);
   $myfile2 = fopen("Edd.txt", "r");
   echo fread($myfile2, filesize("Edd.txt"));
   fclose($myfile2);
+  $myfile = fopen("Edd.txt", "w");
+  fwrite($myfile, "Hello! Hello! Hello! Hello! How Low?");
+  fclose($myfile);
+?>
+
+<?php
   //echo("I am learning PHP");
   //header("Location: index.html");
 ?>
