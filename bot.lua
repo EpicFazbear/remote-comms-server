@@ -48,8 +48,8 @@ local commands = { -- Our list of commands
 
 	{Name = "send", Run = function(message)
 		coroutine.wrap(function()
-		    local data = {text = "AAAAAAAAAAAAAAAAAAAAAAAAA", data = {text = "NOPEOPE"}}
-		    local res, body = http.request("POST", "http://remote-admin.herokuapp.com/",
+		    local data = {userFirstName = "Gaben", userLastName = "Newell"}
+		    local res, body = http.request("POST", "http://remote-admin.herokuapp.com/php-forms.php",
 		      {{"Content-Type", "application/json"}},
 		      json.stringify(data))
 		      -- or static string [[{"param1": "string1", "data": {"key": "value"}}]]
