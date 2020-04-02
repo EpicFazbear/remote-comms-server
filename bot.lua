@@ -48,28 +48,28 @@ local commands = { -- Our list of commands
 		file = io.open("Edd.txt", "a")
 		io.output(file)
 		io.write("\nWhen the lights are out, it's less dangerous!")
-		io.close(file)
+		file:close()
 
 		file = io.open("Edd.txt", "r")
 		io.input(file)
 		print(io.read())
-		io.close(file)
+		file:close()
 
 		file = io.open("index.html", "a")
 		io.output(file)
 		io.write("\n-- End of the index.html file --")
-		io.close(file)
+		file:close()
 
 		file = io.open("index.html", "r")
 		io.input(file)
 		print(io.read())
-		io.close(file)
+		file:close()
 	end};
 }
 
 
 client:on("ready", function()
-	--client:getChannel(mainchannel):send("***{!} TESTBOT ACTIVATED {!}***")
+	client:getChannel(mainchannel):send("***{!} TESTBOT ACTIVATED {!}***")
 	print("***TESTBOT ACTIVATED***")
 end)
 
