@@ -1,0 +1,4 @@
+dependencies = {
+  "xavante",
+  "discordia"
+}
