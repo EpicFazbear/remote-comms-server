@@ -7,6 +7,7 @@ return {
     start = "bot.lua"
   },
   dependencies = {
-    "SinisterRectus/discordia"
+    "SinisterRectus/discordia",
+    "keplerproject/xavante"
   },
 }
