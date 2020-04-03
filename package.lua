@@ -8,6 +8,6 @@ return {
   },
   dependencies = {
     "SinisterRectus/discordia",
-    "keplerproject/xavante"
+    "xavante"
   },
 }
