@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	} else {
 		// Write to the text file
 		$file = fopen("Edd.txt", "w");
-		fwrite($file, $content);
+		fwrite($file, $json);
 		fclose($file);
 		echo readfile("Edd.txt");
 	};
