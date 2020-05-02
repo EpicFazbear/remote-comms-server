@@ -1,7 +1,8 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input field
-    $name = $_POST['content'];
+	$data = json_decode(file_get_contents("php://input"));
+    $name = $data["content"];
     if (empty($name)) {
         echo "Name is empty";
     } else {
