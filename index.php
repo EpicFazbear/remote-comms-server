@@ -9,5 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //	} else {
 //		echo $name;
 //	}
-};
+} else {
+	echo "Not POST."
+}
 ?>
