@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	} else {
 		// Write to the text file
 		$file = fopen("Edd.txt", "w")
+		echo $content;
 		fwrite($file, $content);
 		fclose($file);
 		echo readfile("Edd.txt");
