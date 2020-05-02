@@ -1,9 +1,4 @@
 <?php
-function ErrorHandler($errno, $errstr) {
-  echo "<b>Error:</b> [$errno] $errstr<br>";
-};
-set_error_handler("ErrorHandler");
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// Get the data
 	$json = file_get_contents("php://input");
@@ -17,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	} else {
 		// Write to the text file
 		$file = fopen("Edd.txt", "w")
-		fwrite($file, $json);
+		fwrite($file, $content);
 		fclose($file);
 		echo readfile("Edd.txt");
 	};
