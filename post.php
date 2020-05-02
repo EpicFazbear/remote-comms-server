@@ -11,8 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		echo "Invalid parameters.";
 	} else {
 		// Write to the text file
-		$file = fopen("Edd.txt", "w")
-		echo $content;
+		$file = fopen("Edd.txt", "w");
 		fwrite($file, $content);
 		fclose($file);
 		echo readfile("Edd.txt");
