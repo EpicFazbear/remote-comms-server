@@ -1,2 +1,0 @@
--- this will be where chat logs will be logged i guess
-- Reference: https://www.afterhoursprogramming.com/tutorial/php/post-and-get/
