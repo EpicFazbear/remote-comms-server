@@ -1,5 +1,11 @@
 <?php
-  $myfile = fopen("Edd.txt", "r");
-  echo fread($myfile,filesize("Edd.txt"));
-  fclose($myfile);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // collect value of input field
+    $name = $_POST['content'];
+    if (empty($name)) {
+        echo "Name is empty";
+    } else {
+        echo $name;
+    }
+}
 ?>
