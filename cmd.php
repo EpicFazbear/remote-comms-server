@@ -1,4 +1,4 @@
-<?php
+<?php // This is reserved for the bot and the server scripts for command communication.
 $stored = "Hello! Hello! Hello! Hello! How Low?";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$json = file_get_contents("php://input");
