@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		echo "Invalid parameters.";
 	} else {
 		$stored = $json;
-		echo $stored;
+		echo $stored; // Probably log these commands as well
 //		$file = fopen("Edd.txt", "w");
 //		fwrite($file, $json);
 //		fclose($file);
