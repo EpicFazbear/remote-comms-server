@@ -2,22 +2,29 @@
 <?php
 $stored = "Hello! Hello! Hello! Hello! How Low?";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$json = file_get_contents("php://input");
-	$content = json_decode($json, true)["content"];
+	$recieved = json_decode(file_get_contents("php://input"));
 
-	if (empty($content)) {// Also check if theres a ["command"]
+	if (empty($recieved["content"])) {// Also check if theres a ["command"]
 		echo "Invalid parameters."; // Probably log these commands as well
 	} else { // Commands are not Adonis Commands, but instructions for the server scripts to do stuff (such as stop for a bit, etc.)
-		$stored = $json;
+		if (gettype($stored) != "array") {
+			$stored = {};
+		};
+		array_push($stored, $json)
 		echo $stored;
 //		$file = fopen("Edd.txt", "w");
-//		fwrite($file, $json);
+//		fwrite($file, $recieved);
 //		fclose($file);
 //		echo readfile("Edd.txt");
 	};
 
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
-	echo $stored;
+	if (gettype($stored) == "array") {
+		echo json_encode($stored);
+	} else {
+		echo $stored;
+	};
+	$stored = {};
 } else {
 	echo "Invalid parameters.";
 };
