@@ -33,7 +33,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
 	echo "Invalid parameters.";
 };
-// make the buffer ($stored) a table that stores all the messages sent until the server script GetRequests the php, in which
-// all of the data is sent, and the buffer is reset
-// if the buffer == DEFAULT, then server script doesn't do anything
 ?>
