@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		};
 	} else { // Commands are not Adonis Commands, but instructions for the server scripts to do stuff (such as stop for a bit, etc.)
 		if (gettype($stored) != "array") {
-			$stored = {};
+			$stored = [];
 		};
 		array_push($stored, $json);
 		echo $stored;
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
 	if (gettype($stored) == "array") { // Someone could theoretically hijack this system by spamming GET requests here and constantly clear the buffer
 		echo json_encode($stored); // Before server scripts could ever read them..
-		$stored = {};
+		$stored = [];
 	} else {
 		echo $stored;
 	};
