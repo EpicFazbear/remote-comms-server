@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (empty($recieved["content"])) {
 		if (!empty($recieved["command"])) {
 			$stored = $recieved["command"];
-			echo "Ran command."; // Probably log these commands as well
+			echo "Ran command."; // Future: Log these commands with the person (full tag) who ran them
 		} else {
 			echo "Invalid parameters.";
 		};
@@ -33,4 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
 	echo "Invalid parameters.";
 };
+// Very far off future: Server scripts authenticate with a random GUID, and the communicator creates a secure and
+// separate buffer for them. When that server shuts down, it sends that to the server so that the GUID is removed.
 ?>
