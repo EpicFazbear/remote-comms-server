@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //		array_push($stored, $json);
 //		echo $stored;
 
-		$stored = $json
+		$stored = $json;
 	};
 
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
