@@ -4,9 +4,10 @@ $stored = "Hello! Hello! Hello! Hello! How Low?";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$recieved = file_get_contents("php://input");
 	$decoded = json_decode($recieved, true);
+	print($recieved);
+	print("\n");
 	print_r($decoded);
-	print($decoded["content"]);
-	print("start");
+	print("\n");
 
 	if (!empty($decoded["content"])) {
 		$stored = $recieved;
