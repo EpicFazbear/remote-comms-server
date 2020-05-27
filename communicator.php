@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$decoded = json_decode($recieved, true);
 	print_r($decoded);
 	print($decoded["content"]);
+	print("start");
 
 	if (!empty($decoded["content"])) {
 		$stored = $recieved;
@@ -14,13 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //		};
 //		array_push($stored, $json);
 //		echo $stored;
+	} elseif (!empty($decoded["command"])) { // Commands meant for the server itself
+		$stored = $decoded["command"];
+		echo "Ran command.";
 	} else {
-		if (!empty($decoded["command"])) { // Commands meant for the server itself
-			$stored = $decoded["command"];
-			echo "Ran command.";
-		} else {
-			echo "Invalid parameters.";
-		};
+		echo "Invalid parameters.";
 	};
 
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
