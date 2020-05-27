@@ -1,6 +1,5 @@
 <?php
 // https://discord.com/api/webhooks/715271351354523719/lrtxhDV--CTyuWR3K1xDyosSCZw-HQHO7kSS1e-qMrhaRkwKnOR-h7ACjMbELy8Ojnsl
-$stored = "Hello! Hello! Hello! Hello! How Low?";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$recieved = file_get_contents("php://input");
 	$decoded = json_decode($recieved, true);
