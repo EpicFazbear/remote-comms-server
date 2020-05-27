@@ -1,5 +1,6 @@
-<head><title>EpicFazbear's Remote Admin Site</title></head>
+<head><title>Communications Directory</title></head>
 <?php
+// https://discord.com/api/webhooks/715271351354523719/lrtxhDV--CTyuWR3K1xDyosSCZw-HQHO7kSS1e-qMrhaRkwKnOR-h7ACjMbELy8Ojnsl
 $stored = "Hello! Hello! Hello! Hello! How Low?";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$recieved = json_decode(file_get_contents("php://input"));
@@ -7,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (empty($recieved["content"])) {
 		if (!empty($recieved["command"])) {
 			$stored = $recieved["command"];
-			echo "Ran command."; // Future: Log these commands with the person (full tag) who ran them
+			echo "Ran command.";
 		} else {
 			echo "Invalid parameters.";
 		};
@@ -17,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		};
 		array_push($stored, $json);
 		echo $stored;
+
 //		$file = fopen("Edd.txt", "w");
 //		fwrite($file, $recieved);
 //		fclose($file);
