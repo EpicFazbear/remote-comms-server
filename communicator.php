@@ -4,15 +4,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$recieved = file_get_contents("php://input");
 	$decoded = json_decode($recieved, true);
 
-	if (!empty($decoded["content"])) {
+	if (!empty($decoded)) {
 		$file = fopen("Edd.txt", "w");
 		fwrite($file, $recieved);
 		fclose($file);
 		readfile("Edd.txt");
-
-	} elseif (!empty($decoded["command"])) { // Commands meant for the server itself
-		$stored = $decoded["command"];
-		echo "Ran command.";
 	} else {
 		echo "Invalid parameters.";
 	};
