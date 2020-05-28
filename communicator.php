@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$file = fopen("Edd.txt", "w");
 		fwrite($file, $recieved);
 		fclose($file);
-		echo readfile("Edd.txt");
+		readfile("Edd.txt");
 
 	} elseif (!empty($decoded["command"])) { // Commands meant for the server itself
 		$stored = $decoded["command"];
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	};
 
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
-	echo readfile("Edd.txt");
+	readfile("Edd.txt", "r");
 } else {
 	echo "Invalid parameters.";
 };
