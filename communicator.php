@@ -3,18 +3,13 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$recieved = file_get_contents("php://input");
 	$decoded = json_decode($recieved, true);
-	print($recieved);
-	print("\n");
-	print_r($decoded);
-	print("\n");
 
 	if (!empty($decoded["content"])) {
-		$stored = $recieved;
-//		if (gettype($stored) != "array") {
-//			$stored = [];
-//		};
-//		array_push($stored, $json);
-//		echo $stored;
+		$file = fopen("Edd.txt", "w");
+		fwrite($file, $recieved);
+		fclose($file);
+		echo readfile("Edd.txt");
+
 	} elseif (!empty($decoded["command"])) { // Commands meant for the server itself
 		$stored = $decoded["command"];
 		echo "Ran command.";
@@ -23,12 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	};
 
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
-//	if (gettype($stored) == "array") { // Someone could theoretically hijack this system by spamming GET requests here and constantly clear the buffer before server scripts could ever read them..
-//		echo json_encode($stored);
-//		$stored = [];
-//	} else {
-		echo $stored;
-//	};
+	echo readfile("Edd.txt");
 } else {
 	echo "Invalid parameters.";
 };
