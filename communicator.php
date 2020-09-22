@@ -17,6 +17,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
 	echo "Invalid parameters.";
 };
-// Very far off future: Server scripts authenticate with a random GUID, and the communicator creates a secure and
-// separate buffer for them. When that server shuts down, it sends a message to the server so the GUID gets removed.
 ?>
