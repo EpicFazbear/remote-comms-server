@@ -1,0 +1,12 @@
+{
+	"name": "remote-admin-server",
+	"version": "0.1.0",
+	"description": "Small JS-port of my server project for receiving and holding messages from Discord to Roblox.",
+  "author": "EpicFazbear",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"engines": {
+		"node": "12.18.4"
+	}
+}
