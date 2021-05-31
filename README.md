@@ -1,5 +1,4 @@
-### ARCHIVE NOTICE ##
-This separate webserver is no longer needed as its functionality has been merged right into [remote-comms-bot](https://github.com/EpicFazbear/remote-comms-bot). All you need to do is that if you've deployed your bot onto Heroku, use the bot's URL in place of the separate server's URL.
+**ARCHIVE NOTICE:** This separate webserver is no longer needed as its functionality has been merged right into [remote-comms-bot](https://github.com/EpicFazbear/remote-comms-bot). All you need to do is that if you've deployed your bot onto Heroku, use the bot's URL in place of the separate server's URL.
 
 
 # Remote Communcations Server
